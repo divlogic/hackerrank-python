@@ -29,11 +29,12 @@ def climbingLeaderboard(ranked, player):
             continue
 
         current_rank += 1
-        for j in range(0, player_length - place_tracker):
+        for j in range(0, player_length + 1 - place_tracker):
             if player[-place_tracker] >= ranked[i]:
                 answer.insert(0, current_rank)
                 place_tracker += 1
 
+    # This seems to be the loop early?
     if place_tracker <= player_length:
         while place_tracker <= player_length:
             if player[-place_tracker] != player[-place_tracker + 1]:
